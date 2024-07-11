@@ -2,7 +2,6 @@ const ContactService = require("../services/contact.service.js");
 const {
   SuccessResponse
 } = require("../core/success.response.js");
-const { NotFoundError } = require("../core/error.response.js");
 
 class ContactController {
 

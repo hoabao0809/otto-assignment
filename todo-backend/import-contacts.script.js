@@ -11,7 +11,6 @@ async function importDataFromFile(filePath) {
         const transformedData = transformData(parsedData);
         const data = prepareInsertedContacts(transformedData)
         result = await ContactRepository.insertContacts(data);
-        console.log(result)
         console.log('Data imported successfully');
         process.exit(0); // Exit process after import
     } catch (error) {
@@ -48,14 +47,14 @@ const keyMappings = [
   
 // Function to transform parsed data using keyMappings
 function transformData(parsedData) {
-    return parsedData.map(entry => {
-      const transformedEntry = {};
-      keyMappings.forEach(mapping => {
-        transformedEntry[mapping.newKey] = entry[mapping.originalKey];
-      });
-      return transformedEntry;
+  return parsedData.map(entry => {
+    const transformedEntry = {};
+    keyMappings.forEach(mapping => {
+      transformedEntry[mapping.newKey] = entry[mapping.originalKey];
     });
-  }
+    return transformedEntry;
+  });
+}
 
 
 // Example usage

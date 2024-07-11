@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-const {db : {uri, host, port, name}} = require('../configs/config.mongodb.js')
-// const connectString = `mongodb://${host}:${port}/${name}`;
+const {db : {uri}} = require('../configs/config.mongodb.js')
 
 class Database {
     constructor(type = 'mongodb') {
@@ -16,11 +15,6 @@ class Database {
             .catch((error) => {
                 console.log(`Connect MongoDB failure: ${error}`);
             });
-
-        if (process.env.MONGODB_DEBUG === 'true') {
-            mongoose.set('debug', true);
-            mongoose.set('debug', { color: true });
-        }
     }
 
         // Main connect method to handle different databases

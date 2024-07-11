@@ -22,11 +22,6 @@ app.use(express.urlencoded({
 
 //! init database
 const database = require('./databases/init.mongodb');
-const {
-  checkOverload
-} = require('./helpers/check.connect');
-const httpStatusCode = require('./utils/httpStatusCode.js');
-// checkOverload();
 //! end init database
 
 //! init routes
@@ -34,6 +29,8 @@ app.use('/', require('./routes/index.js'))
 //! end init routes
 
 //! handle error
+const httpStatusCode = require('./utils/httpStatusCode.js');
+
 app.use((req, res, next) => {
   const error = new Error('Not found');
   error.status = httpStatusCode.StatusCodes.NOT_FOUND;

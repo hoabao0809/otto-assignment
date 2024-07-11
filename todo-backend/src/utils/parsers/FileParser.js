@@ -1,5 +1,4 @@
 const CsvParser = require('./CsvParser'); 
-const XlsxParser = require('./XlsxParser');
 
 class FileParser {
 
@@ -13,8 +12,7 @@ class FileParser {
         switch (extension) {
             case 'csv':
                 return new CsvParser();
-            case 'xlsx':
-                return new XlsxParser();
+      
             default:
                 throw new Error(`Unsupported file format: ${extension}`);
         }
