@@ -81,7 +81,7 @@ const TodoDialog = ({ open, onClose, onSubmit, todo }) => {
         <Button onClick={onClose} color="primary">
           Cancel
         </Button>
-        <Button onClick={handleSubmit} color="primary">
+        <Button onClick={handleSubmit} color="primary" variant='contained'>
           {todo ? 'Update' : 'Add'}
         </Button>
       </DialogActions>

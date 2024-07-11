@@ -6,7 +6,7 @@ const SearchBox = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   display: 'flex',
   gap: theme.spacing(1),
-  flexDirection: 'column',
+  flexDirection: 'row',
 }));
 
 const SearchBar = ({ search, handleSearchChange, handleSearchSubmit }) => {

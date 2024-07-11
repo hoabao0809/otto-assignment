@@ -28,7 +28,7 @@ export default function MainLayout() {
           >
               <Typography variant="h5">HelloWorld</Typography>
               <Stack direction='row' spacing={1} divider={<Divider orientation="vertical" flexItem />}>
-                <NavItem title='Todo' to='/' />
+                <NavItem title='Todo' to='/'/>
                 <NavItem title='Weather' to='/weather' />
                 <NavItem title='Contact' to='/contact' />
               </Stack>
@@ -46,6 +46,7 @@ function NavItem({title, to}) {
   const { pathname } = useLocation();
 const isActive = pathname === to;
   return   <Typography component={Link}  to={to} variant="body2" sx={{
+    fontWeight:'bold',
     textDecoration: 'none',
     cursor: 'pointer',
     color: theme => theme.palette.grey[700],

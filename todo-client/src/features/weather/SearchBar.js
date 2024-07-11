@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch, defaultCity }) => {
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit}>
+    <Box component="form" onSubmit={handleSubmit} display='inline-flex' width={1} gap={1} mb={2}>  
       <TextField
         label="Enter city"
         value={searchTerm}

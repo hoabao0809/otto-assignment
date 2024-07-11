@@ -5,7 +5,7 @@ import {
   useUpdateTodoMutation,
   useDeleteTodoMutation,
 } from '../../api/taskApi';
-import { Button } from '@mui/material';
+import { Button, Stack } from '@mui/material';
 import TodoList from './TodoList'; // Assuming TodoList is in the same directory as TodoContainer
 import TodoDialog from './TodoDialog'; // Assuming TodoDialog is in the same directory as TodoContainer
 
@@ -51,10 +51,12 @@ const TodoContainer = () => {
 
   return (
     <>
-      <h1>Todo List</h1>
-      <Button variant="contained" color="primary" onClick={handleAddTodo}>
-        Add Todo
-      </Button>
+      <Stack direction='row' spacing={1} justifyContent='space-between' alignItems='center'>
+        <h1>Todo List</h1>
+        <Button variant="contained" color="primary" onClick={handleAddTodo} size='small'>
+          Add
+        </Button>
+      </Stack>
       <TodoList
         todos={todos}
         isLoading={isLoading}

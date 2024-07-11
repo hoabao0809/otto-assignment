@@ -5,6 +5,7 @@ import App from './App';
 import store from './store';
 import { Provider } from 'react-redux';
 import theme from './theme/theme';
+import './index.css'; // Ensure this import is present
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
