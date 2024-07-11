@@ -16,7 +16,7 @@ const TodoDialog = ({ open, onClose, onSubmit, todo }) => {
   const [formState, setFormState] = useState({
     name: '',
     description: '',
-    priority: 2, // Default to 'medium'
+    priority: 2,
     completed: false,
   });
 

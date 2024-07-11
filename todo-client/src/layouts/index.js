@@ -44,17 +44,26 @@ export default function MainLayout() {
 
 function NavItem({title, to}) {
   const { pathname } = useLocation();
-const isActive = pathname === to;
-  return   <Typography component={Link}  to={to} variant="body2" sx={{
-    fontWeight:'bold',
-    textDecoration: 'none',
-    cursor: 'pointer',
-    color: theme => theme.palette.grey[700],
-    ...isActive && {
-      color: 'primary.main',
-    },
-    '&:hover': {
-      color: theme => alpha(theme.palette.primary.main, 0.6),
-    }
-  }} >{title}</Typography>
+  const isActive = pathname === to;
+  return (
+    <Typography 
+      component={Link}  
+      to={to} 
+      variant="body2" 
+      sx={{
+        fontWeight:'bold',
+        textDecoration: 'none',
+        cursor: 'pointer',
+        color: theme => theme.palette.grey[700],
+        ...isActive && {
+          color: 'primary.main',
+        },
+        '&:hover': {
+          color: theme => alpha(theme.palette.primary.main, 0.6),
+        }
+      }}
+    >
+      {title}
+    </Typography>
+  )   
 }

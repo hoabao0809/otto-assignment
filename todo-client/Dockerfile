@@ -1,31 +1,27 @@
-# Frontend Dockerfile
-FROM node:18.17.0-alpine as build
+# Use an official Node.js runtime as the base image
+FROM node:18.12.0-alpine
 
-# Set working directory
+# Set the working directory inside the container
 WORKDIR /app
 
-# Install dependencies
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install
+# Copy package.json and package-lock.json
+COPY package.json package-lock.json ./
 
-# Copy source code
+# Install the dependencies
+RUN npm install --legacy-peer-deps
+
+# Copy the rest of the application code
 COPY . .
 
-# Build the app
+# Build the React application
 RUN npm run build
 
-# Stage 2 - Nginx
+# Use nginx to serve the static files
 FROM nginx:alpine
+COPY --from=0 /app/build /usr/share/nginx/html
 
-# Copy built assets from the build stage
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Copy Nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# Expose port
+# Expose the port nginx will use
 EXPOSE 80
 
-# Start Nginx server
+# Start nginx
 CMD ["nginx", "-g", "daemon off;"]

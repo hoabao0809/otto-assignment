@@ -39,7 +39,6 @@ const ContactItem = ({ contact }) => {
                 <Typography variant="body2">{contact.address.addressLine2}</Typography>
                 <Typography variant="body2">{contact.address.addressLine1}</Typography>
               </Box>
-              
             </Box>
           </Grid>
         </Grid>
