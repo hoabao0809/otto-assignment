@@ -33,6 +33,25 @@ With **Contact List**, users can search for contact information, which are extra
 <br/>
 <br/>
 
+## Server Built with Node.js
+
+The server component of this application is built with Node.js. It provides the following APIs:
+
+### APIs
+
+1. **Todo CRUD Operations**
+   - Endpoint: `/api/todos`
+   - Functionality: Create, Read, Update, and Delete todo items.
+
+2. **Search for Contacts**
+   - Endpoint: `/api/contacts`
+   - Functionality: Search for contact information stored in MongoDB.
+
+### Scripts
+1. **A Script to parse CSV file and Save data to MongoDB**
+   - Functionality: Parse CSV files containing contact information and save the data to MongoDB.
+   - Navigate to the todo-backend directory and run the command `node import-contacts.script.js`.
+
 ## ✨ Getting Started
 
 - Make sure you already have `Node.js` and `npm` installed in your system.
