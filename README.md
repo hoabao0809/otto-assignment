@@ -1,4 +1,4 @@
-<<<<<<< master
+
 # HelloWorld Web App in React.js
 
 This project is a HelloWorld web application built in React.js. It includes a to-do list feature, a weather forecast page that retrieves real-time weather data using an open-source weather API and a contact page to search for data from Appendix I.
